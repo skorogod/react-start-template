@@ -2,6 +2,18 @@
  * Здесь код с ошибками типов. Нужно их устранить
  * */
 
+
+let s = {a:1, b:2}
+
+const obj = {
+  a: 1,
+  b: 2
+}
+
+function getProp<T>(obj: T, key: keyof T) {
+  return obj[key]
+}
+
 // Мы это не проходили, но по тексту ошибки можно понять, как это починить
 export const getFakeApi = async (): Promise<void> => {
   const result = await fetch('https://jsonplaceholder.typicode.com/todos/1').then((response) => response.json());

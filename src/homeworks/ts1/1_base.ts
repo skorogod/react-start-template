@@ -1,16 +1,16 @@
-/**
+4/**
  * Нужно превратить файл в ts и указать типы аргументов и типы возвращаемого значения
  * */
-export const removePlus = (string: string) => string.replace(/^\+/, '');
+export const removePlus: (string: string) => string = (string) => string.replace(/^\+/, '');
 
-export const addPlus = (string: string) => `+${string}`;
+export const addPlus: (string: string) => string = (string) => `+${string}`;
 
-export const removeFirstZeros = (value: string) => value.replace(/^(-)?[0]+(-?\d+.*)$/, '$1$2');
+export const removeFirstZeros: (value: string) => string = (value) => value.replace(/^(-)?[0]+(-?\d+.*)$/, '$1$2');
 
-export const getBeautifulNumber = (value: string | number, separator = ' ') =>
+export const getBeautifulNumber: (value: string | number, separator: string ) => string = (value: string | number, separator = ' ') =>
   value?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, separator);
 
-export const round = (value: number, accuracy = 2) => {
+export const round: (value: number, accuracy: number) => number = (value: number, accuracy = 2) => {
   const d = 10 ** accuracy;
   return Math.round(value * d) / d;
 };
@@ -18,7 +18,9 @@ export const round = (value: number, accuracy = 2) => {
 const transformRegexp =
   /(matrix\(-?\d+(\.\d+)?, -?\d+(\.\d+)?, -?\d+(\.\d+)?, -?\d+(\.\d+)?, )(-?\d+(\.\d+)?), (-?\d+(\.\d+)?)\)/;
 
-export const getTransformFromCss = (transformCssString: string) => {
+type GetTransformFromCss = (transformFromCssProps: string) => {x: number, y: number}
+
+export const getTransformFromCss: GetTransformFromCss = (transformCssString: string) => {
   const data = transformCssString.match(transformRegexp);
   if (!data) return { x: 0, y: 0 };
   return {
@@ -27,20 +29,31 @@ export const getTransformFromCss = (transformCssString: string) => {
   };
 };
 
-export const getColorContrastValue = ([red, green, blue]: Array<number>) =>
+
+type GetColorContrastValue = ([red, green, blue]: [number, number, number]) => number
+
+export const getColorContrastValue: GetColorContrastValue = ([red, green, blue]) =>
   // http://www.w3.org/TR/AERT#color-contrast
   Math.round((red * 299 + green * 587 + blue * 114) / 1000);
 
-export const getContrastType = (contrastValue: number) => (contrastValue > 125 ? 'black' : 'white');
+type GetContrastType = (contrastValue: number) => 'black' | 'white'  
+export const getContrastType: GetContrastType = (contrastValue) => (contrastValue > 125 ? 'black' : 'white');
 
 export const shortColorRegExp = /^#[0-9a-f]{3}$/i;
 export const longColorRegExp = /^#[0-9a-f]{6}$/i;
 
-export const checkColor = (color: string) => {
-  if (!longColorRegExp.test(color) && !shortColorRegExp.test(color)) throw new Error(`invalid hex color: ${color}`);
+
+type CheckColor = (color: string) => never | undefined
+
+export const checkColor: CheckColor = (color) => {
+  if (!longColorRegExp.test(color) && !shortColorRegExp.test(color)) 
+    throw new Error(`invalid hex color: ${color}`);
 };
 
-export const hex2rgb = (color: string) => {
+
+type Hex2rgb = (color: string) => [number, number,number]
+
+export const hex2rgb: Hex2rgb = (color: string) => {
   checkColor(color);
   if (shortColorRegExp.test(color)) {
     const red = parseInt(color.substring(1, 2), 16);
@@ -54,8 +67,15 @@ export const hex2rgb = (color: string) => {
   return [red, green, blue];
 };
 
-export const getNumberedArray = (arr: Array<any>) => arr.map((value, number) => ({ value, number }));
-export const toStringArray = (arr: Array<any>) => arr.map(({ value, number }) => `${value}_${number}`);
+
+type GetNumberedArray = <T>(arr: Array<T>) => Array<{value: T, number: number}>
+
+export const getNumberedArray: GetNumberedArray = (arr) => arr.map((value, number) => ({ value, number }));
+
+
+type ToStringArray = (arr: Array<{value: unknown, number: number}>) => Array<string>
+
+export const toStringArray: ToStringArray = (arr) => arr.map(({ value, number }) => `${value}_${number}`);
 
 type TCustomer = {
   id: string | number,
@@ -64,8 +84,10 @@ type TCustomer = {
   isSubscribed: boolean
 }
 
-export const transformCustomers = (customers: Array<TCustomer>) => {
-  return customers.reduce((acc: {[key: TCustomer['id']]: Omit<TCustomer, 'id'>}, customer) => {
+type TransformCustomers = (customers: TCustomer[]) => {[key: TCustomer['id']]: Omit<TCustomer, 'id'>}
+
+export const transformCustomers: TransformCustomers = (customers) => {
+  return customers.reduce<ReturnType<TransformCustomers>>((acc, customer) => {
     acc[customer.id] = { name: customer.name, age: customer.age, isSubscribed: customer.isSubscribed };
     return acc;
   }, {});
