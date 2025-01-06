@@ -1,6 +1,5 @@
 import React, { ReactElement, FC } from 'react'
 import  modalCss from './modal.module.scss'
-import closeIcon from '../../assets/icons/close-svgrepo-com (1).svg'
 
 type ModalProps = {
     visible: boolean,
@@ -10,7 +9,7 @@ type ModalProps = {
 
 export const Modal:FC<ModalProps> = (props: ModalProps) => {
     return (
-        <div className={modalCss.modalOverlay}>
+        <div className={`${modalCss.modalOverlay} ${props.visible && modalCss.visible}`}>
             <div className={modalCss.modal}>
                 <header className={modalCss.modalHeader}>
                     <button className={modalCss.closeButton}>
