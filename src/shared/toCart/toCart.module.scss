@@ -1,0 +1,50 @@
+.button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+} 
+
+.cartButton {
+    width: 40px;
+    height: 40px;
+}
+
+.cartIcon {
+    background-image: url('../../assets/icons/cart.svg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+.plusButton, .minusButton {
+    width: 20px;
+    height: 20px;
+}
+
+.plusIcon {
+    background-image: url('../../assets/icons//plus.svg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+.minusIcon {
+    background-image: url('../../assets/icons/minus.svg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+.cartInput {
+    display: flex;
+    column-gap: 1rem;
+    max-width: 100px;
+}
+
+.counterInput {
+    width: 30px;
+}
