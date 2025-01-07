@@ -4,7 +4,7 @@ import { ToCart } from "../toCart/ToCart";
 import { Product } from "../../interfaces/product.interface";
 
 
-export type  ProductCardProps  = {count: number, backgroundColor?: string, color?: string} & Omit<Product, 'category'>
+export type  ProductCardProps = {count: number, backgroundColor?: string, color?: string, image: string} & Omit<Product, 'category' | 'images'>
 
 export const ProductCard:FC<ProductCardProps> = (props) => {
     return (

@@ -1,20 +1,42 @@
 import React from 'react';
 import './App.css';
-import { ToCart } from '../shared/toCart/ToCart';
-
-import { Modal } from '../shared/modal/Modal';
-import { ProductCard } from 'src/shared/productCard/ProductCard';
+import { ProductDetails } from '../shared/productDetails/ProductDetails';
 
 function App() {
   return (
     <div className="App">
-      <ProductCard
-        description='test'
-        cost={20}
-        title='test'
-        image=''
-        count={2}
-      ></ProductCard>
+      <ProductDetails
+        description={
+                      `
+                      ⭐Без СПАМБЛОКА!\n
+                      ⭐Для любых целей\n
+                      ⭐PREMIUM - качество.\n
+                      ⭐Владелец - только вы! Ставите двухфакторку и привязываете почту.\n\n
+
+                      ✔ Отвечаю быстро.\n
+                      ✔ Моментальная выдача товара.\n\n
+
+                      ❓ Как будет происходить сделка?\n
+
+                      1️⃣ Вы оплачиваете товар.\n
+                      2️⃣ Я присылаю вам номер, вы заходите и просите код.\n
+                      3️⃣ Далее вы меняете данные и вы ставите Облачный пароль (2FA).`
+                    }
+        cost={200}
+        title='Telegram accounts'
+        images={
+          [
+            'https://avatars.mds.yandex.net/get-vthumb/3333356/915836b1bb9bbb4bc9257fa973baefd8/800x450',
+            'https://i.ytimg.com/vi/ht1IDr80VEw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBIiNHir1hgLfxO_2g7g0zCB_OFqg',
+            'https://avatars.mds.yandex.net/get-vthumb/3333356/915836b1bb9bbb4bc9257fa973baefd8/800x450',
+            'https://i.ytimg.com/vi/ht1IDr80VEw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBIiNHir1hgLfxO_2g7g0zCB_OFqg',
+            'https://avatars.mds.yandex.net/get-vthumb/3333356/915836b1bb9bbb4bc9257fa973baefd8/800x450',
+            'https://i.ytimg.com/vi/ht1IDr80VEw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBIiNHir1hgLfxO_2g7g0zCB_OFqg',
+            
+          ]
+        }
+        category={{name: 'Аккаунты'}}
+      ></ProductDetails>
     </div>
   );
 }
