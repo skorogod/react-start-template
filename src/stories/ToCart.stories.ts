@@ -1,22 +1,22 @@
-import type { Meta } from "@storybook/react";
-import { ToCart } from "../shared/toCart/ToCart";
+import type { Meta } from '@storybook/react';
+import { ToCart } from '../shared/toCart/ToCart';
 
 const meta: Meta<typeof ToCart> = {
-    title: 'Example/ToCart',
-    component: ToCart,
-    tags: ['autodocs']
-}
+  title: 'Example/ToCart',
+  component: ToCart,
+  tags: ['autodocs'],
+};
 
-export default meta
+export default meta;
 
 export const NullCounter = {
-    args: {
-        counter: 0
-    }
-}
+  args: {
+    counter: 0,
+  },
+};
 
 export const NotNullCounter = {
-    args: {
-        counter: 1
-    }
-}
+  args: {
+    counter: 1,
+  },
+};

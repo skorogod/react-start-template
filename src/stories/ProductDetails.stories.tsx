@@ -1,20 +1,19 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { ProductDetails } from "../shared/productDetails/ProductDetails";
+import type { Meta, StoryObj } from '@storybook/react';
+import { ProductDetails } from '../shared/productDetails/ProductDetails';
 
 const meta: Meta<typeof ProductDetails> = {
-    title: 'Example/ProductDetails',
-    tags: ['autodocs'],
-    component: ProductDetails
-}
+  title: 'Example/ProductDetails',
+  tags: ['autodocs'],
+  component: ProductDetails,
+};
 
-export default meta
+export default meta;
 
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof meta>;
 
 export const base: Story = {
-    args: {
-        description: 
-            `
+  args: {
+    description: `
             ⭐Без СПАМБЛОКА!\n
             ⭐Для любых целей\n
             ⭐PREMIUM - качество.\n
@@ -28,18 +27,17 @@ export const base: Story = {
             1️⃣ Вы оплачиваете товар.\n
             2️⃣ Я присылаю вам номер, вы заходите и просите код.\n
             3️⃣ Далее вы меняете данные и вы ставите Облачный пароль (2FA).`,
-          
-        cost: 200,
-        title: 'Telegram accounts',
-        images: [
-                'https://avatars.mds.yandex.net/get-vthumb/3333356/915836b1bb9bbb4bc9257fa973baefd8/800x450',
-                'https://i.ytimg.com/vi/ht1IDr80VEw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBIiNHir1hgLfxO_2g7g0zCB_OFqg',
-                'https://avatars.mds.yandex.net/get-vthumb/3333356/915836b1bb9bbb4bc9257fa973baefd8/800x450',
-                'https://i.ytimg.com/vi/ht1IDr80VEw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBIiNHir1hgLfxO_2g7g0zCB_OFqg',
-                'https://avatars.mds.yandex.net/get-vthumb/3333356/915836b1bb9bbb4bc9257fa973baefd8/800x450',
-                'https://i.ytimg.com/vi/ht1IDr80VEw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBIiNHir1hgLfxO_2g7g0zCB_OFqg',
-                
-        ],
-        category:{name: 'Аккаунты'}
-    }
-}
+
+    cost: 200,
+    title: 'Telegram accounts',
+    images: [
+      'https://avatars.mds.yandex.net/get-vthumb/3333356/915836b1bb9bbb4bc9257fa973baefd8/800x450',
+      'https://i.ytimg.com/vi/ht1IDr80VEw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBIiNHir1hgLfxO_2g7g0zCB_OFqg',
+      'https://avatars.mds.yandex.net/get-vthumb/3333356/915836b1bb9bbb4bc9257fa973baefd8/800x450',
+      'https://i.ytimg.com/vi/ht1IDr80VEw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBIiNHir1hgLfxO_2g7g0zCB_OFqg',
+      'https://avatars.mds.yandex.net/get-vthumb/3333356/915836b1bb9bbb4bc9257fa973baefd8/800x450',
+      'https://i.ytimg.com/vi/ht1IDr80VEw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBIiNHir1hgLfxO_2g7g0zCB_OFqg',
+    ],
+    category: { name: 'Аккаунты' },
+  },
+};
