@@ -49,9 +49,11 @@ export const ProductDetails:FC<Product> = (props) => {
                     </p>
                     {
                         descriptionOverflow || showFullDescription ?
-                        <a href="#" onClick={onToggleFullDescription} role="button">
-                            {!showFullDescription ? 'ещё' : 'свернуть'}
-                        </a> : ''
+                        <div className={productDetailsCss.moreToggle}>
+                            <a href="#" onClick={onToggleFullDescription} role="button">
+                                {!showFullDescription ? 'ещё' : 'свернуть'}
+                            </a>
+                        </div>: ''
                     }
                 </div>
                 <div className={productDetailsCss.costContainer}>
