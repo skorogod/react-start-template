@@ -6,7 +6,7 @@
  * */
 
 import { TypeScriptConfigOverwrite } from 'fork-ts-checker-webpack-plugin/lib/typescript/type-script-config-overwrite';
-const uid = require('uid');
+import {v4 as uuidv4} from 'uuid'
 
 type TCategory = {
   id: string;
@@ -51,7 +51,7 @@ export const createRandomProduct: (createdAt: string) => TProduct = (createdAt) 
     .join('');
 
   return {
-    id: uid(8),
+    id: uuidv4(),
     name: str_random(6),
     photo: str_random(10),
     desc: description,
@@ -59,7 +59,7 @@ export const createRandomProduct: (createdAt: string) => TProduct = (createdAt) 
     oldPrice: Math.random() * 100,
     price: Math.random() * 100,
     category: {
-      id: uid(8),
+      id: uuidv4(),
       name: str_random(6),
       photo: str_random(10),
     },
@@ -77,13 +77,13 @@ export const createRandomOperation: (createdAt: string) => TOperation = (created
     .join('');
   return {
     type: Math.random() > 0.5 ? 'Cost' : ('Profit' as const),
-    id: uid(8),
+    id: uuidv4(),
     name: str_random(6),
     desc: description,
     createdAt,
     amount: Math.round(Math.random() * 100),
     category: {
-      id: uid(8),
+      id: uuidv4(),
       photo: str_random(10),
       name: str_random(6),
     },
