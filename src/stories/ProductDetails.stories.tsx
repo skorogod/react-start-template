@@ -28,7 +28,9 @@ export const base: Story = {
             2️⃣ Я присылаю вам номер, вы заходите и просите код.\n
             3️⃣ Далее вы меняете данные и вы ставите Облачный пароль (2FA).`,
 
-    cost: 200,
+    costFull: 200,
+    inStock: 700,
+    costDiscount: 300,
     title: 'Telegram accounts',
     images: [
       'https://avatars.mds.yandex.net/get-vthumb/3333356/915836b1bb9bbb4bc9257fa973baefd8/800x450',

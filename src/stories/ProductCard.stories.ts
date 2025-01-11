@@ -5,6 +5,7 @@ import telegramAccountsImage from '../assets/telegram-accounts.jpg';
 const meta: Meta<typeof ProductCard> = {
   title: 'Example/ProductCard',
   component: ProductCard,
+  tags: ['autodocs'],
   argTypes: {
     backgroundColor: { control: 'color' },
     color: { control: 'color' },
@@ -17,7 +18,7 @@ const productCardProps: Omit<ProductCardProps, 'count'> = {
   title: 'Телеграм аккаунт',
   description: 'лучшие телеграм аккаунты по низким ценам только у нас!',
   image: telegramAccountsImage,
-  cost: 200,
+  costFull: 200,
 };
 
 export const WithNotNullCount = {

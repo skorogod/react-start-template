@@ -18,7 +18,7 @@ export const ProductInCart: FC<ProductInCartProps> = (props) => {
           <div className={producInCartCss.infoGrid}>
             <label className={producInCartCss.costLabel} htmlFor="cost"></label>
             <p id="cost" className={producInCartCss.cost}>
-              {props.cost}
+              {props.costFull}
             </p>
           </div>
         </div>

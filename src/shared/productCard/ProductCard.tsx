@@ -24,7 +24,7 @@ export const ProductCard: FC<ProductCardProps> = (props) => {
         <p className={productCardCss.description}>{props.description}</p>
         <div className={productCardCss.info}>
           <label className={productCardCss.costLabel} htmlFor="cost"></label>
-          <p id="cost">{props.cost}</p>
+          <p id="cost">{props.costFull}</p>
         </div>
       </main>
       <footer className={productCardCss.footer}>
