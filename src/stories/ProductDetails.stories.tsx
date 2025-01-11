@@ -5,6 +5,9 @@ const meta: Meta<typeof ProductDetails> = {
   title: 'Example/ProductDetails',
   tags: ['autodocs'],
   component: ProductDetails,
+  parameters: {
+    layout: 'centered'
+  }
 };
 
 export default meta;

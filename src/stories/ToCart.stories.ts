@@ -5,6 +5,9 @@ const meta: Meta<typeof ToCart> = {
   title: 'Example/ToCart',
   component: ToCart,
   tags: ['autodocs'],
+  parameters: {
+    layout: 'centered'
+  }
 };
 
 export default meta;

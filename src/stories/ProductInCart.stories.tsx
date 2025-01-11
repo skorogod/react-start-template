@@ -7,6 +7,9 @@ const meta: Meta<typeof ProductInCart> = {
   title: 'Example/ProductInCart',
   tags: ['autodocs'],
   component: ProductInCart,
+  parameters: {
+    layout: 'centered'
+  }
 };
 
 export default meta;
