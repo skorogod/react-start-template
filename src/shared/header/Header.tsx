@@ -8,27 +8,27 @@ import headerCss from './header.module.scss';
 type HeaderProps = {
   user?: User;
   backgroundColor?: string;
-  onLogin?: () => void;
-  onLogout?: () => void;
-  onCreateAccount?: () => void;
+  onLogin: () => void;
+  onLogout: () => void;
+  onCreateAccount: () => void;
 };
 
-export const Header: FC<HeaderProps> = (props: HeaderProps) => {
+export const Header: FC<HeaderProps> = ({ user, backgroundColor, onLogin, onLogout, onCreateAccount }) => {
   return (
-    <header style={{ backgroundColor: props.backgroundColor }} className={headerCss.header}>
+    <header style={{ backgroundColor: backgroundColor }} className={headerCss.header}>
       <div className={headerCss.content}>
         <div className={headerCss.logo}>
           <Logo />
         </div>
         <div className={headerCss.userInfo}>
-          {props.user ? (
+          {user ? (
             <>
-              <Button size="small" onClick={props.onLogout} label="Log out" />
+              <Button size="small" onClick={onLogout} label="Log out" />
             </>
           ) : (
             <>
-              <Button size="small" onClick={props.onLogin} label="Log in" />
-              <Button primary size="small" onClick={props.onCreateAccount} label="Sign up" />
+              <Button size="small" onClick={onLogin} label="Log in" />
+              <Button primary size="small" onClick={onCreateAccount} label="Sign up" />
             </>
           )}
         </div>

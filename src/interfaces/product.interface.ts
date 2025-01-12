@@ -8,3 +8,10 @@ export type Product = {
   description?: string;
   category?: Category;
 };
+
+export type ProductCardProps = Product & {
+  count: number;
+  backgroundColor?: string;
+  color?: string;
+  image: string;
+};

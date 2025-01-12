@@ -6,7 +6,7 @@
  * */
 
 import { TypeScriptConfigOverwrite } from 'fork-ts-checker-webpack-plugin/lib/typescript/type-script-config-overwrite';
-import {v4 as uuidv4} from 'uuid'
+import { v4 as uuidv4 } from 'uuid';
 
 type TCategory = {
   id: string;

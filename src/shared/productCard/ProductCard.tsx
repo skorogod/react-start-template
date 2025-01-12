@@ -1,34 +1,34 @@
 import React, { FC } from 'react';
 import productCardCss from './productCard.module.scss';
 import { ToCart } from '../toCart/ToCart';
-import { Product } from '../../interfaces/product.interface';
+import type { ProductCardProps } from '../../interfaces/product.interface';
 
-export type ProductCardProps = { count: number; backgroundColor?: string; color?: string; image: string } & Omit<
-  Product,
-  'category' | 'images'
->;
-
-export const ProductCard: FC<ProductCardProps> = (props) => {
+export const ProductCard: FC<ProductCardProps> = ({
+  color,
+  backgroundColor,
+  title,
+  image,
+  description,
+  costFull,
+  count,
+}) => {
   return (
-    <article
-      className={productCardCss.productCard}
-      style={{ backgroundColor: props.backgroundColor, color: props.color }}
-    >
+    <article className={productCardCss.productCard} style={{ backgroundColor: backgroundColor, color: color }}>
       <header className={productCardCss.header}>
-        <p className={productCardCss.title}>{props.title}</p>
+        <p className={productCardCss.title}>{title}</p>
       </header>
       <main className={productCardCss.main}>
         <div className={productCardCss.imageContainer}>
-          <img className={productCardCss.image} src={props.image} alt="product-image" />
+          <img className={productCardCss.image} src={image} alt="product-image" />
         </div>
-        <p className={productCardCss.description}>{props.description}</p>
+        <p className={productCardCss.description}>{description}</p>
         <div className={productCardCss.info}>
           <label className={productCardCss.costLabel} htmlFor="cost"></label>
-          <p id="cost">{props.costFull}</p>
+          <p id="cost">{costFull}</p>
         </div>
       </main>
       <footer className={productCardCss.footer}>
-        <ToCart counter={props.count}></ToCart>
+        <ToCart counter={count}></ToCart>
       </footer>
     </article>
   );

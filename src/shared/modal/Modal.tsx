@@ -4,19 +4,19 @@ import modalCss from './modal.module.scss';
 type ModalProps = {
   visible: boolean;
   children: ReactElement;
-  onCloseClick: () => void;
+  onCloseClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
-export const Modal: FC<ModalProps> = (props: ModalProps) => {
+export const Modal: FC<ModalProps> = ({ visible, children, onCloseClick }) => {
   return (
-    <div className={`${modalCss.modalOverlay} ${props.visible && modalCss.visible}`}>
+    <div className={`${modalCss.modalOverlay} ${visible && modalCss.visible}`}>
       <div className={modalCss.modal}>
         <header className={modalCss.modalHeader}>
-          <button className={modalCss.closeButton}>
+          <button onClick={onCloseClick} className={modalCss.closeButton}>
             <i className={modalCss.closeIcon}></i>
           </button>
         </header>
-        {props.children}
+        {children}
       </div>
     </div>
   );

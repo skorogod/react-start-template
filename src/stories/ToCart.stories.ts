@@ -6,8 +6,8 @@ const meta: Meta<typeof ToCart> = {
   component: ToCart,
   tags: ['autodocs'],
   parameters: {
-    layout: 'centered'
-  }
+    layout: 'centered',
+  },
 };
 
 export default meta;

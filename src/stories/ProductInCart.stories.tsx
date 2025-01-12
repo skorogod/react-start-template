@@ -8,8 +8,8 @@ const meta: Meta<typeof ProductInCart> = {
   tags: ['autodocs'],
   component: ProductInCart,
   parameters: {
-    layout: 'centered'
-  }
+    layout: 'centered',
+  },
 };
 
 export default meta;

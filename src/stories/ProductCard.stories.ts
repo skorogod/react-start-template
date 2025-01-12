@@ -7,7 +7,7 @@ const meta: Meta<typeof ProductCard> = {
   component: ProductCard,
   tags: ['autodocs'],
   parameters: {
-    layout: 'centered'
+    layout: 'centered',
   },
   argTypes: {
     backgroundColor: { control: 'color' },

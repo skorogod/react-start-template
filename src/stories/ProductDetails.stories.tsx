@@ -6,8 +6,8 @@ const meta: Meta<typeof ProductDetails> = {
   tags: ['autodocs'],
   component: ProductDetails,
   parameters: {
-    layout: 'centered'
-  }
+    layout: 'centered',
+  },
 };
 
 export default meta;
