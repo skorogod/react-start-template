@@ -1,34 +1,37 @@
-import React, { FC } from 'react';
-import cn from 'clsx';
-import { sum } from './sum';
-import './button.css';
+import React from 'react';
+import s from './button.module.sass';
 
 interface ButtonProps {
+  /**
+   * Is this the principal call to action on the page?
+   */
   primary?: boolean;
-  backgroundColor?: string | null;
-  size?: string;
+  /**
+   * What background color to use
+   */
+  backgroundColor?: string;
+  /**
+   * How large should the button be?
+   */
+  size?: 'small' | 'medium' | 'large';
+  /**
+   * Button contents
+   */
   label: string;
+  /**
+   * Optional click handler
+   */
+  onClick?: () => void;
 }
+
 /**
  * Primary UI component for user interaction
  */
-
-export const Button: FC<ButtonProps> = ({ primary, backgroundColor, size, label, ...props }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
-
-  const onClick = () => {
-    sum(4, 5);
-  };
-
+export function Button({ primary = false, size = 'medium', backgroundColor, label, ...props }: ButtonProps) {
+  const mode = primary ? s.primary : s.secondary;
   return (
-    <button
-      type="button"
-      className={cn('storybook-button', `storybook-button--${size}`, mode)}
-      style={{ backgroundColor: backgroundColor || 'green' }}
-      onClick={onClick}
-      {...props}
-    >
+    <button type="button" className={[s.button, s[size], mode].join(' ')} style={{ backgroundColor }} {...props}>
       {label}
     </button>
   );
-};
+}

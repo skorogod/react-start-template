@@ -2,16 +2,15 @@
  * Здесь код с ошибками типов. Нужно их устранить
  * */
 
-
-let s = {a:1, b:2}
+const s = { a: 1, b: 2 };
 
 const obj = {
   a: 1,
-  b: 2
-}
+  b: 2,
+};
 
 function getProp<T>(obj: T, key: keyof T) {
-  return obj[key]
+  return obj[key];
 }
 
 // Мы это не проходили, но по тексту ошибки можно понять, как это починить
@@ -22,9 +21,9 @@ export const getFakeApi = async (): Promise<void> => {
 
 // Мы это не проходили, но по тексту ошибки можно понять, как это починить
 export class SomeClass {
-  set: Set<number>
-  channel: BroadcastChannel
-  
+  set: Set<number>;
+  channel: BroadcastChannel;
+
   constructor() {
     this.set = new Set([1]);
     this.channel = new BroadcastChannel('test-broadcast-channel');
@@ -49,11 +48,10 @@ export type Percent = {
 
 // Здесь, возможно, нужно использовать as, возможно в switch передавать немного по-другому
 const getDataAmount = (data: Data): number => {
-    if ('amount' in data.value)
-        return data.value.amount;
-    else {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const unhandled: never = data as never; // здесь, возможно, нужно использовать нечто другое. :never должен остаться
-        throw new Error(`unknown type: ${data.type}`);
-    }
+  if ('amount' in data.value) return data.value.amount;
+  else {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const unhandled: never = data as never; // здесь, возможно, нужно использовать нечто другое. :never должен остаться
+    throw new Error(`unknown type: ${data.type}`);
+  }
 };
